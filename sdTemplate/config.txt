@@ -1,0 +1,8 @@
+wifiSsid=DammformVsGitter1
+wifiPass=1234567890
+ap=true
+moistureOneAirValue=2363
+moistureOneWaterValue=435
+moistureTwoAirValue=2363
+moistureTwoWaterValue=435
+
