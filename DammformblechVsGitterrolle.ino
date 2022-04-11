@@ -31,6 +31,9 @@
 
 #define ABSOLUTE_ZERO -273
 
+#define SOIL_MOISTURE_SENSOR_1_PIN 34
+#define SOIL_MOISTURE_SENSOR_2_PIN 35
+
 // LED
 #define LED_PIN 2
 
@@ -82,10 +85,8 @@ struct SoilMoistureSensor {
   int sensorPin;
 };
 
-SoilMoistureSensor soilMoistureSensor1;
-//= {.airValue = 2363, .waterValue = 435, .sensorPin = 34};
-SoilMoistureSensor soilMoistureSensor2;
-//= {.airValue = 2363, .waterValue = 435, .sensorPin = 35};
+SoilMoistureSensor soilMoistureSensor1 = {.airValue = 2363, .waterValue = 435, .sensorPin = SOIL_MOISTURE_SENSOR_1_PIN};
+SoilMoistureSensor soilMoistureSensor2 = {.airValue = 2363, .waterValue = 435, .sensorPin = SOIL_MOISTURE_SENSOR_2_PIN};
 SoilMoistureSensor& sensor1 = soilMoistureSensor1;
 SoilMoistureSensor& sensor2 = soilMoistureSensor2;
 
@@ -300,8 +301,8 @@ void setup() {
   pinMode(25, INPUT_PULLUP);
   pinMode(26, INPUT_PULLUP);
   pinMode(27, INPUT_PULLUP);
-  pinMode(34, INPUT_PULLDOWN);
-  pinMode(35, INPUT_PULLDOWN);
+  pinMode(SOIL_MOISTURE_SENSOR_1_PIN, INPUT_PULLDOWN);
+  pinMode(SOIL_MOISTURE_SENSOR_2_PIN, INPUT_PULLDOWN);
 
   Serial.println("setup()");
 
